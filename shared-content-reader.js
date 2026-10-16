@@ -59,7 +59,7 @@
         field.tabIndex=-1;
       });
       const title=document.querySelector('#dictionaryEditTitle');
-      if(title)title.textContent='Diccionario bíblico';
+      if(title&&title.textContent!=='Diccionario bíblico')title.textContent='Diccionario bíblico';
       const toggle=document.querySelector('#dictionaryHighlightEnabled');
       if(toggle&&!toggle.dataset.sharedReaderBound){
         toggle.dataset.sharedReaderBound='true';
