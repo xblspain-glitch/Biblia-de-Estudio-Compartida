@@ -1,5 +1,5 @@
 const DATA='./';
-const APP_VERSION='1.0.3-compartida';
+const APP_VERSION='1.0.4-compartida';
 document.getElementById('appVersionNumber')?.replaceChildren(APP_VERSION);
 const CACHE_PREFIX='biblia-estudio-';
 const DICTIONARY_EQUIVALENCE_CHOICES_KEY='biblia_dictionary_equivalence_choices_v3150';
