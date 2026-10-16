@@ -28,7 +28,7 @@
       '.action-fragment','.action-remove-explanation','.action-correct-verse','#installTitles',
       '.fragment-list-actions','.detail-crud-actions','.prophecy-detail-tools',
       '.crud-add','.crud-trash','.crud-edit','.crud-delete','.crud-block',
-      '[data-entity-link-manually]','[data-entity-exclude]','[data-entity-direct]',
+      '[data-entity-link-manually]','[data-entity-exclude]','button[data-entity-direct]',
       '[data-entity-change]','[data-entity-remove]','[data-entity-reset]',
       '[onclick*="editBiblicalCharacter"]','[onclick*="deleteBiblicalCharacter"]',
       '[onclick*="editBiblicalParable"]','[onclick*="deleteBiblicalParable"]',
