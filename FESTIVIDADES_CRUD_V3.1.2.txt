@@ -1,0 +1,12 @@
+MI BIBLIA DE ESTUDIO · V3.1.2
+GESTIÓN COMPLETA DE FESTIVIDADES
+
+- Botón Añadir festividad en la biblioteca.
+- Plantilla con nombre, fecha, explicación, significado y notas.
+- Edición de festividades originales y personalizadas.
+- Eliminación de festividades.
+- Botón Añadir pasaje dentro de cada festividad.
+- Edición y eliminación individual de pasajes.
+- Migración automática de los datos guardados en la V3.1.0 y V3.1.1.
+- Cambios incluidos en la copia de seguridad mediante biblia_festividades_v310.
+- Las 26 festividades originales permanecen intactas en biblical-festivities.json.

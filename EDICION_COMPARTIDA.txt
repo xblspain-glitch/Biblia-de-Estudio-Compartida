@@ -1,0 +1,14 @@
+EDICIÓN COMPARTIDA · BIBLIA DE ESTUDIO
+
+Esta edición recibe las explicaciones, el diccionario y los módulos de estudio
+publicados por el responsable de la Biblia.
+
+Cada lector conserva de forma independiente sus notas, favoritos, subrayados,
+progreso, puntos de libro, preferencias y celebraciones personales.
+
+Cuando exista una actualización, basta con abrir la Biblia con conexión. El
+contenido compartido se actualizará sin borrar los datos personales. Después de
+la primera carga completa, la aplicación seguirá funcionando sin conexión.
+
+El contenido compartido es de solo lectura. Los datos personales sí se pueden
+añadir, modificar, exportar y guardar en Google Drive desde esta edición.
