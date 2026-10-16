@@ -1,4 +1,4 @@
-const version=window.BIBLE_APP_VERSION_V1||'1.0.7-compartida';
+const version=window.BIBLE_APP_VERSION_V1||'1.0.8-compartida';
 const startupScriptsV3119=['shared-content-reader.js?v='+version,'app.js?v='+version,'progress-map.js?v='+version];
 
 function paintStoredReadingPointV3163(){

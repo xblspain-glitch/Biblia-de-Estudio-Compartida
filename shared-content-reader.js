@@ -20,6 +20,7 @@
     document.documentElement.classList.add('shared-reader');
     const selectors=[
       '#editExplanationInline','#pasteExplanation','#saveExplanation','#separateExplanationParagraphs','#editExplanation',
+      '#sharedOwnerTechnicalTools',
       '#restoreVerseOriginal','#saveVerseCorrection','#saveFragmentClarification','#cancelFragmentEdit',
       '#addDictionaryEntry','#addDictionaryEquivalent','#addDictionaryBriefPhrase','#deleteDictionaryEntry',
       '#saveDictionaryEntry','#saveDictionaryEquivalent','#saveDictionaryBriefPhrase','#addMissingDictionaryEntry',

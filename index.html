@@ -7,12 +7,12 @@
   <title>Mi Biblia de Estudio</title>
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3.1.14">
   <link rel="manifest" href="manifest.webmanifest?v=3.1.14">
-<link rel="stylesheet" href="styles.css?v=1.0.7-compartida">
+<link rel="stylesheet" href="styles.css?v=1.0.8-compartida">
   <link rel="stylesheet" href="biblical-characters-v2244.css?v=3.1.14">
   <link rel="stylesheet" href="biblical-parables-v16436.css?v=3.1.14">
   <link rel="stylesheet" href="biblical-guides-v16436.css?v=3.1.14">
   <link rel="stylesheet" href="theme-overrides.css?v=3.1.14">
-  <link rel="stylesheet" href="progress-map.css?v=1.0.7-compartida">
+  <link rel="stylesheet" href="progress-map.css?v=1.0.8-compartida">
 
 
 
@@ -184,7 +184,7 @@
     <div class="study-module-panel functions-guide-panel">
       <div class="study-module-head"><button class="btn soft" type="button" onclick="closeFunctionsGuide()">← Volver</button></div>
       <h1>Guía de funciones de Mi Biblia de Estudio</h1>
-      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.7-compartida" alt="" aria-hidden="true">
+      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.8-compartida" alt="" aria-hidden="true">
       <p class="study-module-sub">Conoce el significado de las cápsulas, colores, marcas y herramientas disponibles durante la lectura.</p>
       <div class="functions-guide-intro"><strong>Cómo usar esta guía</strong><p>Los elementos siguientes son ejemplos visuales. En el texto bíblico real podrás pulsarlos para abrir su contenido o cambiar su estado.</p></div>
       <div class="functions-guide-sections">
@@ -263,7 +263,7 @@
         <button class="btn soft notes-new-button" type="button" onclick="openNoteEditor()">+ Nueva nota</button>
       </div>
       <h1>Bloc de notas</h1>
-      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.7-compartida" alt="" aria-hidden="true">
+      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.8-compartida" alt="" aria-hidden="true">
       <p class="study-module-sub">Tus apuntes personales, guardados en este dispositivo y en tus copias de seguridad.</p>
       <input id="notesSearchInput" class="notes-search-input" type="search" autocomplete="off" placeholder="Buscar en mis notas">
       <div id="notesModuleList" class="notes-module-list"></div>
@@ -837,7 +837,7 @@
     <div class="daily-verse-heading"><div><h2>Versículo del día</h2><p id="dailyVerseDate"></p></div></div>
     <article class="daily-verse-card">
       <div class="daily-verse-meta"><div id="dailyVerseCategory" class="daily-verse-category">Enseñanza</div><div id="dailyVerseNumber" class="daily-verse-number">Versículo del día #0001</div></div>
-      <img class="daily-verse-ethiopian-ornament" src="separador_etiope_transparente_final.png?v=1.0.7-compartida" alt="" aria-hidden="true">
+      <img class="daily-verse-ethiopian-ornament" src="separador_etiope_transparente_final.png?v=1.0.8-compartida" alt="" aria-hidden="true">
       <blockquote id="dailyVerseText"></blockquote>
       <strong id="dailyVerseReference" class="daily-verse-reference"></strong><p id="dailyVerseReflection" class="daily-verse-reflection"></p>
     </article>
@@ -869,12 +869,13 @@
       <strong id="backupStatusTitle">Copia al día</strong>
       <span id="backupStatusText">No hay cambios pendientes de exportar.</span>
     </div>
-    <button id="exportBackup" type="button" class="wide-btn backup-export">Exportar copia completa JSON</button>
+    <button id="exportBackup" type="button" class="wide-btn backup-export">Exportar copia JSON</button>
     <button id="saveDriveBackup" type="button" class="wide-btn backup-drive">Guardar copia en Google Drive</button>
     <div id="driveBackupStatus" class="drive-backup-status" aria-live="polite">Destino: Mi unidad / Biblia de Estudio - Backups</div>
     <button id="importBackup" type="button" class="wide-btn backup-import">Importar copia JSON</button>
     <input id="backupFileInput" type="file" accept="application/json,.json" hidden>
-    <p class="backup-help">La copia completa incluye explicaciones, diccionario, personajes, parábolas, guías y sus papeleras, además de versículos guardados, puntos de lectura, subrayados, ajustes, títulos, festividades, pasajes editables y auditorías. Puede exportarla como JSON o guardarla directamente en Google Drive. La primera vez Google pedirá autorización y la app creará la carpeta «Biblia de Estudio - Backups» en Mi unidad.</p>
+    <p class="backup-help">La copia de seguridad protege tus datos personales de lectura, como notas, versículos guardados, puntos de libro, subrayados, progreso, preferencias y celebraciones personales. Puedes exportarla como JSON o guardarla directamente en Google Drive. La primera vez Google pedirá autorización y la app creará la carpeta «Biblia de Estudio - Backups» en Mi unidad. El contenido de estudio compartido se recibe automáticamente y no necesita mantenimiento.</p>
+    <div id="sharedOwnerTechnicalTools">
     <button id="installTitles" type="button" class="wide-btn primary">Instalar títulos en su orden correcto</button>
     <p id="titleLayerStatus" class="titles-status">La Biblia verificada no se modifica. Solo se añadirá una capa independiente de títulos.</p>
     <div id="titleSeal" class="audit-seal hidden">🏷️ Títulos verificados</div>
@@ -894,7 +895,8 @@
     <div id="auditSeal" class="audit-seal hidden">🛡️ Biblia verificada</div>
     <p id="auditHash" class="audit-hash hidden"></p>
     <button id="downloadAuditReport" type="button" class="wide-btn hidden">Descargar informe de auditoría</button>
-    <p class="app-version-info" aria-label="Versión instalada">Biblia de Estudio Compartida · versión <strong id="appVersionNumber">1.0.7</strong></p>
+    </div>
+    <p class="app-version-info" aria-label="Versión instalada">Biblia de Estudio Compartida · versión <strong id="appVersionNumber">1.0.8</strong></p>
   </dialog>
 
   <dialog id="studyAuditDialog" class="sheet-dialog study-audit-dialog">
@@ -925,20 +927,20 @@
 
   <div id="toast" class="toast hidden"></div>
   <script src="dictionary-data.js?v=3.1.14"></script>
-  <script src="biblical-characters-v2244-v2835.js?v=1.0.7-compartida"></script>
+  <script src="biblical-characters-v2244-v2835.js?v=1.0.8-compartida"></script>
   <script src="biblical-parables-v16436-v2835.js?v=3.1.14"></script>
   <script src="biblical-guides-v16436-v2835.js?v=3.1.14"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-  <script src="bible-storage-idb-safe-v3119.js?v=1.0.7-compartida"></script>
-  <script type="module" src="bible-app-loader-safe-v3119.js?v=1.0.7-compartida"></script>
+  <script src="bible-storage-idb-safe-v3119.js?v=1.0.8-compartida"></script>
+  <script type="module" src="bible-app-loader-safe-v3119.js?v=1.0.8-compartida"></script>
 
 <script>
 (function(){
   if(!('serviceWorker' in navigator))return;
 
-  const targetVersion='1.0.7-compartida';
+  const targetVersion='1.0.8-compartida';
   let pendingWorker=null;
   let updateAccepted=false;
 
