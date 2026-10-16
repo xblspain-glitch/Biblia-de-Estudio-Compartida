@@ -1,7 +1,10 @@
 (function(){
   'use strict';
 
-  const DB_NAME='biblia_estudio_content_v1';
+  // La edición compartida usa una base propia. GitHub Pages comparte el origen
+  // entre repositorios del mismo usuario, por lo que no debe abrir la base de
+  // la Biblia privada aunque ambas aplicaciones estén instaladas en el móvil.
+  const DB_NAME='biblia_estudio_compartida_content_v1';
   const DB_VERSION=1;
   const PRIMARY_STORE='records';
   const AUTOMATIC_STORE='automatic';

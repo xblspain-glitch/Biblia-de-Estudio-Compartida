@@ -1,7 +1,8 @@
 (function(){
   'use strict';
 
-  const DB_NAME='biblia_estudio_content_v1';
+  // Base independiente de la Biblia privada alojada bajo el mismo dominio.
+  const DB_NAME='biblia_estudio_compartida_content_v1';
   const DB_VERSION=1;
   const PRIMARY_STORE='records';
   const AUTOMATIC_STORE='automatic';
