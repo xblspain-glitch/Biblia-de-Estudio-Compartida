@@ -1,4 +1,4 @@
-const version='1.0.8-compartida';
+const version='1.0.9-compartida';
 
 function paintStoredReadingPointV3163(){
   try{
