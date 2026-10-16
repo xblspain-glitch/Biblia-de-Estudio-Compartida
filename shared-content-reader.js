@@ -22,12 +22,33 @@
       '#editExplanationInline','#pasteExplanation','#saveExplanation','#separateExplanationParagraphs','#editExplanation',
       '#restoreVerseOriginal','#saveVerseCorrection','#saveFragmentClarification','#cancelFragmentEdit',
       '#addDictionaryEntry','#addDictionaryEquivalent','#addDictionaryBriefPhrase','#deleteDictionaryEntry',
-      '#saveDictionaryEntry','#saveDictionaryEquivalent','#saveDictionaryBriefPhrase',
+      '#saveDictionaryEntry','#saveDictionaryEquivalent','#saveDictionaryBriefPhrase','#addMissingDictionaryEntry',
+      '#excludeDictionaryOccurrence','#excludeDictionaryGlobalForm','#saveDictionaryOccurrence',
       '.action-fragment','.action-remove-explanation','.action-correct-verse','#installTitles',
-      '.module-crud-tools','.crud-add','.crud-trash',
-      '[onclick*="editBiblicalCharacter"]','[onclick*="openBiblicalPlaceEditor"]','[onclick*="openBiblicalProphecyEditor"]'
+      '.fragment-list-actions','.detail-crud-actions','.prophecy-detail-tools',
+      '.crud-add','.crud-trash','.crud-edit','.crud-delete','.crud-block',
+      '[data-entity-link-manually]','[data-entity-exclude]','[data-entity-direct]',
+      '[data-entity-change]','[data-entity-remove]','[data-entity-reset]',
+      '[onclick*="editBiblicalCharacter"]','[onclick*="deleteBiblicalCharacter"]',
+      '[onclick*="editBiblicalParable"]','[onclick*="deleteBiblicalParable"]',
+      '[onclick*="editBiblicalGuide"]','[onclick*="deleteBiblicalGuide"]',
+      '[onclick*="openBiblicalPlaceEditor"]','[onclick*="deleteBiblicalPlace"]',
+      '[onclick*="openBiblicalProphecyEditor"]','[onclick*="deleteBiblicalProphecy"]',
+      '[onclick*="biblicalPlacesImportInput"]','[onclick*="exportBiblicalPlaces"]'
     ];
-    const hide=()=>document.querySelectorAll(selectors.join(',')).forEach(element=>element.hidden=true);
+    const selectorText=selectors.join(',');
+    let style=document.getElementById('sharedReaderReadOnlyStyle');
+    if(!style){
+      style=document.createElement('style');
+      style.id='sharedReaderReadOnlyStyle';
+      style.textContent=`${selectorText}{display:none!important}`;
+      document.head.appendChild(style);
+    }
+    const hide=()=>document.querySelectorAll(selectorText).forEach(element=>{
+      element.hidden=true;
+      element.setAttribute('aria-hidden','true');
+      element.tabIndex=-1;
+    });
     hide();
     new MutationObserver(hide).observe(document.documentElement,{childList:true,subtree:true});
   }
