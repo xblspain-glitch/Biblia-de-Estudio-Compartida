@@ -60,11 +60,6 @@
       });
       const title=document.querySelector('#dictionaryEditTitle');
       if(title&&title.textContent!=='Diccionario bíblico')title.textContent='Diccionario bíblico';
-      const toggle=document.querySelector('#dictionaryHighlightEnabled');
-      if(toggle&&!toggle.dataset.sharedReaderBound){
-        toggle.dataset.sharedReaderBound='true';
-        toggle.addEventListener('change',()=>document.querySelector('#saveDictionaryEntry')?.click());
-      }
     };
     hide();
     lockDictionaryEditor();
