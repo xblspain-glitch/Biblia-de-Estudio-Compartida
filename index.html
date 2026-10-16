@@ -7,12 +7,12 @@
   <title>Mi Biblia de Estudio</title>
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3.1.14">
   <link rel="manifest" href="manifest.webmanifest?v=3.1.14">
-<link rel="stylesheet" href="styles.css?v=1.0.9-compartida">
+<link rel="stylesheet" href="styles.css?v=1.0.10-compartida">
   <link rel="stylesheet" href="biblical-characters-v2244.css?v=3.1.14">
   <link rel="stylesheet" href="biblical-parables-v16436.css?v=3.1.14">
   <link rel="stylesheet" href="biblical-guides-v16436.css?v=3.1.14">
   <link rel="stylesheet" href="theme-overrides.css?v=3.1.14">
-  <link rel="stylesheet" href="progress-map.css?v=1.0.9-compartida">
+  <link rel="stylesheet" href="progress-map.css?v=1.0.10-compartida">
 
 
 
@@ -135,6 +135,7 @@
         <button class="action pastel-action action-highlight" data-action="highlight" aria-label="Subrayar">SUBRAYAR</button>
         <button class="action pastel-action action-reading-point" data-action="reading-point" aria-label="Ir al punto de libro">PUNTO DE LIBRO</button>
         <button class="action pastel-action action-favorite" data-action="favorite" aria-label="Guardar punto de libro">GUARDAR PUNTO DE LIBRO</button>
+        <button class="action pastel-action action-personal-note" data-action="personal-note" aria-label="Añadir nota personal">NOTA PERSONAL</button>
         <button class="action pastel-action action-explain" data-action="explain" aria-label="Explicación">EXPLICACIÓN</button>
         <button class="action pastel-action action-remove-explanation hidden" data-action="remove-explanation" aria-label="Quitar explicación">QUITAR EXPLICACIÓN</button>
         <button class="action pastel-action action-fragment" data-action="fragment" aria-label="Añadir aclaración">AÑADIR ACLARACIÓN</button>
@@ -184,7 +185,7 @@
     <div class="study-module-panel functions-guide-panel">
       <div class="study-module-head"><button class="btn soft" type="button" onclick="closeFunctionsGuide()">← Volver</button></div>
       <h1>Guía de funciones de la Biblia de Estudio Compartida</h1>
-      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.9-compartida" alt="" aria-hidden="true">
+      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.10-compartida" alt="" aria-hidden="true">
       <p class="study-module-sub">Conoce el significado de las cápsulas, colores, marcas y herramientas disponibles durante la lectura.</p>
       <div class="functions-guide-intro"><strong>Cómo usar esta guía</strong><p>Los elementos siguientes son ejemplos visuales. El contenido bíblico y de estudio compartido es de solo lectura. Puedes consultarlo libremente y personalizar tus propios guardados, subrayados, notas, progreso y preferencias.</p></div>
       <div class="functions-guide-sections">
@@ -222,14 +223,16 @@
         <details class="functions-guide-section"><summary>Seleccionar versículos y usar la botonera</summary><div class="functions-guide-body">
           <div class="functions-guide-example guide-verse-example"><sup>13</sup> Vosotros sois la sal de la tierra.</div>
           <p>Pulsa un versículo para seleccionarlo y abrir la botonera lateral. Puedes añadir versículos consecutivos y realizar una acción sobre todo el fragmento seleccionado.</p>
-          <p>Desde la botonera puedes <strong>copiar, subrayar, guardar versículos, marcar un punto de lectura, abrir una explicación compartida, consultar el diccionario, acceder a la enciclopedia y ver estadísticas</strong>.</p>
+          <p>Desde la botonera puedes <strong>copiar, subrayar, marcar un punto de libro, añadir una nota personal vinculada al pasaje, abrir una explicación compartida, consultar el diccionario, acceder a la enciclopedia y ver estadísticas</strong>.</p>
+          <p>Las notas personales son privadas: quedan guardadas en este dispositivo y se incluyen en tus copias JSON o de Google Drive, pero nunca modifican el contenido compartido.</p>
           <p>La flecha lateral oculta o vuelve a mostrar la botonera para dejar más espacio a la lectura.</p>
         </div></details>
-        <details class="functions-guide-section"><summary>Subrayados, guardados y punto de lectura</summary><div class="functions-guide-body">
+        <details class="functions-guide-section"><summary>Subrayados, notas y punto de libro</summary><div class="functions-guide-body">
           <div class="functions-guide-example guide-highlight-row"><span class="guide-highlight yellow"></span><span class="guide-highlight blue"></span><span class="guide-highlight green"></span><span class="guide-highlight pink"></span><span class="guide-highlight purple"></span><span class="guide-highlight orange"></span></div>
           <p><strong>Subrayar</strong> permite aplicar distintos colores a los versículos seleccionados para organizar tu estudio. Puedes cambiar el color o retirar el subrayado.</p>
-          <p><strong>Punto de libro</strong> guarda el versículo para encontrarlo después. <strong>Guardar punto de lectura</strong> recuerda el lugar exacto por el que deseas continuar.</p>
-          <p>Los guardados, subrayados y demás datos personales aparecen también en las estadísticas y en <strong>Mi camino en la Palabra</strong>.</p>
+          <p><strong>Guardar punto de libro</strong> recuerda el lugar exacto por el que deseas continuar. El botón <strong>Punto de libro</strong> te lleva de nuevo a ese lugar.</p>
+          <p><strong>Nota personal</strong> permite escribir un comentario privado sobre uno o varios versículos consecutivos. Después puedes abrirlo desde el mismo pasaje, desde el Bloc de notas o desde Estadísticas.</p>
+          <p>Las notas, el punto de libro, los subrayados y demás datos personales aparecen también en las estadísticas y se incluyen en tus copias de seguridad.</p>
         </div></details>
         <details class="functions-guide-section"><summary>Correcciones incluidas en el texto</summary><div class="functions-guide-body">
           <div class="functions-guide-example guide-button-row"><span class="guide-corrected-verse-number">41</span><span class="guide-action-button guide-corrected">TEXTO CORREGIDO</span></div>
@@ -260,7 +263,7 @@
         <button class="btn soft notes-new-button" type="button" onclick="openNoteEditor()">+ Nueva nota</button>
       </div>
       <h1>Bloc de notas</h1>
-      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.9-compartida" alt="" aria-hidden="true">
+      <img class="encyclopedia-divider" src="separador_etiope_transparente_final.png?v=1.0.10-compartida" alt="" aria-hidden="true">
       <p class="study-module-sub">Tus apuntes personales, guardados en este dispositivo y en tus copias de seguridad.</p>
       <input id="notesSearchInput" class="notes-search-input" type="search" autocomplete="off" placeholder="Buscar en mis notas">
       <div id="notesModuleList" class="notes-module-list"></div>
@@ -686,10 +689,13 @@
     <form method="dialog"><button class="dialog-close">✕</button></form>
     <h2 id="noteEditorHeading">Nueva nota</h2>
     <input id="noteEditorId" type="hidden">
+    <input id="notePassageKey" type="hidden">
+    <div id="notePassageRef" class="note-passage-ref hidden"></div>
     <label class="note-editor-label">Título<input id="noteTitleInput" type="text" maxlength="160" autocomplete="off" placeholder="Por ejemplo: Error a corregir"></label>
     <label class="note-editor-label">Nota<textarea id="noteBodyInput" placeholder="Pega aquí el versículo y escribe la corrección..."></textarea></label>
     <div class="modal-actions note-editor-actions">
       <button id="deleteNoteButton" type="button" class="danger">Eliminar</button>
+      <button id="goToNotePassageButton" type="button" class="secondary" hidden>Ir al pasaje</button>
       <button id="saveNoteButton" type="button" class="primary">Guardar</button>
     </div>
   </dialog>
@@ -766,6 +772,7 @@
     <div class="stats-grid stats-grid-simple">
       <button type="button" class="stats-tile" data-stats-list="saved"><strong id="statsSavedTotal">0</strong><span>Guardados</span><small>Ver listado</small></button>
       <button type="button" class="stats-tile stats-reading-point" data-stats-list="reading"><strong id="statsReadingPointRef">Sin guardar</strong><span>Punto de libro</span><small>Ver historial</small></button>
+      <button type="button" class="stats-tile" data-stats-list="personal-notes"><strong id="statsPersonalNotes">0</strong><span>Notas personales</span><small>Ver listado</small></button>
       <button type="button" class="stats-tile" data-stats-list="explanations"><strong id="statsExplanations">0</strong><span>Explicaciones</span><small>Ver listado</small></button>
       <button type="button" class="stats-tile stats-dictionary-tile" data-stats-list="dictionary">
         <strong id="statsDictionary">0</strong><span>Diccionario</span>
@@ -834,7 +841,7 @@
     <div class="daily-verse-heading"><div><h2>Versículo del día</h2><p id="dailyVerseDate"></p></div></div>
     <article class="daily-verse-card">
       <div class="daily-verse-meta"><div id="dailyVerseCategory" class="daily-verse-category">Enseñanza</div><div id="dailyVerseNumber" class="daily-verse-number">Versículo del día #0001</div></div>
-      <img class="daily-verse-ethiopian-ornament" src="separador_etiope_transparente_final.png?v=1.0.9-compartida" alt="" aria-hidden="true">
+      <img class="daily-verse-ethiopian-ornament" src="separador_etiope_transparente_final.png?v=1.0.10-compartida" alt="" aria-hidden="true">
       <blockquote id="dailyVerseText"></blockquote>
       <strong id="dailyVerseReference" class="daily-verse-reference"></strong><p id="dailyVerseReflection" class="daily-verse-reflection"></p>
     </article>
@@ -893,7 +900,7 @@
     <p id="auditHash" class="audit-hash hidden"></p>
     <button id="downloadAuditReport" type="button" class="wide-btn hidden">Descargar informe de auditoría</button>
     </div>
-    <p class="app-version-info" aria-label="Versión instalada">Biblia de Estudio Compartida · versión <strong id="appVersionNumber">1.0.9</strong></p>
+    <p class="app-version-info" aria-label="Versión instalada">Biblia de Estudio Compartida · versión <strong id="appVersionNumber">1.0.10</strong></p>
   </dialog>
 
   <dialog id="studyAuditDialog" class="sheet-dialog study-audit-dialog">
@@ -924,20 +931,20 @@
 
   <div id="toast" class="toast hidden"></div>
   <script src="dictionary-data.js?v=3.1.14"></script>
-  <script src="biblical-characters-v2244-v2835.js?v=1.0.9-compartida"></script>
+  <script src="biblical-characters-v2244-v2835.js?v=1.0.10-compartida"></script>
   <script src="biblical-parables-v16436-v2835.js?v=3.1.14"></script>
   <script src="biblical-guides-v16436-v2835.js?v=3.1.14"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-  <script src="bible-storage-idb-safe-v3119.js?v=1.0.9-compartida"></script>
-  <script type="module" src="bible-app-loader-safe-v3119.js?v=1.0.9-compartida"></script>
+  <script src="bible-storage-idb-safe-v3119.js?v=1.0.10-compartida"></script>
+  <script type="module" src="bible-app-loader-safe-v3119.js?v=1.0.10-compartida"></script>
 
 <script>
 (function(){
   if(!('serviceWorker' in navigator))return;
 
-  const targetVersion='1.0.9-compartida';
+  const targetVersion='1.0.10-compartida';
   let pendingWorker=null;
   let updateAccepted=false;
 
