@@ -50,8 +50,25 @@
       element.tabIndex=-1;
       element.style.setProperty('display','none','important');
     });
+    const lockDictionaryEditor=()=>{
+      ['#dictionaryTerm','#dictionaryCategory','#dictionaryExplanation'].forEach(selector=>{
+        const field=document.querySelector(selector);
+        if(!field)return;
+        field.readOnly=true;
+        field.setAttribute('aria-readonly','true');
+        field.tabIndex=-1;
+      });
+      const title=document.querySelector('#dictionaryEditTitle');
+      if(title)title.textContent='Diccionario bíblico';
+      const toggle=document.querySelector('#dictionaryHighlightEnabled');
+      if(toggle&&!toggle.dataset.sharedReaderBound){
+        toggle.dataset.sharedReaderBound='true';
+        toggle.addEventListener('change',()=>document.querySelector('#saveDictionaryEntry')?.click());
+      }
+    };
     hide();
-    new MutationObserver(hide).observe(document.documentElement,{childList:true,subtree:true});
+    lockDictionaryEditor();
+    new MutationObserver(()=>{hide();lockDictionaryEditor()}).observe(document.documentElement,{childList:true,subtree:true});
   }
 
   async function initialize(){
