@@ -4953,6 +4953,19 @@ body:not(.light-mode) .explanation-group:has(.verse.selected){background:linear-
 body.light-mode .verse.explained-verse{background:linear-gradient(180deg,rgba(196,159,229,.21),rgba(163,111,207,.15));outline-color:rgba(145,94,190,.48);box-shadow:inset 0 1px 0 rgba(255,255,255,.38),0 0 0 1px rgba(133,83,176,.055)}
 body.light-mode .explanation-group{background:linear-gradient(180deg,rgba(196,159,229,.14),rgba(163,111,207,.09))!important;border-color:rgba(145,94,190,.48)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.36),0 0 0 1px rgba(133,83,176,.05)!important}
 body.light-mode .explanation-group:has(.verse.selected){background:linear-gradient(180deg,rgba(190,148,224,.21),rgba(155,101,199,.15))!important;border-color:rgba(145,94,190,.62)!important}
+/* V1.0.12 · La nota personal permanece visible dentro de una explicación. */
+.explanation-group .verse.personal-note-verse,
+.explanation-group .verse.explained-verse.personal-note-verse{
+  position:relative;
+  z-index:1;
+  border-bottom:2px solid rgba(67,169,200,.92)!important;
+  -webkit-box-decoration-break:clone!important;
+  box-decoration-break:clone!important;
+}
+body.light-mode .explanation-group .verse.personal-note-verse,
+body.light-mode .explanation-group .verse.explained-verse.personal-note-verse{
+  border-bottom-color:rgba(27,126,157,.86)!important;
+}
 /* V3.1.160 · Vista previa segura para separar párrafos de una explicación. */
 .explanation-paragraph-dialog{width:min(96vw,980px);max-height:94vh;overflow:auto}
 .explanation-paragraph-help{margin:0 0 16px;color:#c9cbd0;line-height:1.45}
