@@ -4966,6 +4966,21 @@ body.light-mode .explanation-group .verse.personal-note-verse,
 body.light-mode .explanation-group .verse.explained-verse.personal-note-verse{
   border-bottom-color:rgba(27,126,157,.86)!important;
 }
+/* V1.0.13 · Compatibilidad con Samsung Internet para nombres enlazados. */
+body:not(.light-mode) .reader .biblical-entity-link,
+body:not(.light-mode) .reader .biblical-entity-link .dict-word{
+  color:#f4f2ed!important;
+  -webkit-text-fill-color:#f4f2ed!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+body.light-mode .reader .biblical-entity-link,
+body.light-mode .reader .biblical-entity-link .dict-word{
+  color:#211f1b!important;
+  -webkit-text-fill-color:#211f1b!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
 /* V3.1.160 · Vista previa segura para separar párrafos de una explicación. */
 .explanation-paragraph-dialog{width:min(96vw,980px);max-height:94vh;overflow:auto}
 .explanation-paragraph-help{margin:0 0 16px;color:#c9cbd0;line-height:1.45}
