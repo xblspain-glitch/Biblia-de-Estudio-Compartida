@@ -1,0 +1,209 @@
+/* V3.1.15 · Mapa del progreso de los 66 libros */
+.progress-map-section{display:grid;gap:18px}
+.progress-map-intro{margin:-8px 0 0;color:var(--muted);font-size:.86rem;line-height:1.5}
+.progress-map-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.progress-map-summary>div{min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(196,151,52,.34);border-radius:15px;background:rgba(255,255,255,.035);text-align:center}
+.progress-map-summary strong{font-size:1.28rem;color:#efd68e}
+.progress-map-summary span{margin-top:3px;color:var(--muted);font-size:.7rem}
+.progress-map-testament{display:grid;gap:11px}
+.progress-map-testament h3{margin:0;color:#e7cc83;font-family:"Lora",serif;font-size:1rem}
+.progress-map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.progress-map-book{width:100%;min-width:0;padding:11px;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(255,255,255,.025);color:var(--text);font:inherit;text-align:left;cursor:pointer}
+.progress-map-book.in-progress{border-color:rgba(205,155,47,.68);background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(181,127,19,.10))}
+.progress-map-book.completed{border-color:rgba(76,151,92,.75);background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(46,117,64,.15))}
+.progress-map-book-head{display:flex;align-items:flex-start;justify-content:space-between;gap:7px}
+.progress-map-book-head strong{min-width:0;font-size:.84rem;line-height:1.25;overflow-wrap:anywhere}
+.progress-map-book-head small{flex:0 0 auto;color:var(--muted);font-size:.6rem}
+.progress-map-book.in-progress .progress-map-book-head small{color:#e0bf69}
+.progress-map-book.completed .progress-map-book-head small{color:#8fd19d}
+.progress-map-book-count{display:block;margin-top:8px;color:var(--muted);font-size:.68rem}
+.progress-map-book-bar{display:block;height:5px;margin-top:8px;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.09)}
+.progress-map-book-bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#94620d,#e1bd58,#fff0aa)}
+.progress-map-book.completed .progress-map-book-bar i{background:linear-gradient(90deg,#27643a,#66a96f,#d5efcf)}
+.progress-map-book-detail{display:grid;gap:3px;margin-top:9px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.66rem}
+body.light-mode .progress-map-intro{color:#655c4f}
+body.light-mode .progress-map-summary>div,body.light-mode .progress-map-book{background:#fffdf8;border-color:#c9b06d;color:#30291f}
+body.light-mode .progress-map-summary strong{color:#735000}
+body.light-mode .progress-map-summary span,body.light-mode .progress-map-book-head small,body.light-mode .progress-map-book-count,body.light-mode .progress-map-book-detail{color:#655c4f}
+body.light-mode .progress-map-book.in-progress{border-color:#b88723;background:linear-gradient(145deg,#fffdf8,#f7ecd0)}
+body.light-mode .progress-map-book.completed{border-color:#5f9d69;background:linear-gradient(145deg,#fffdf8,#e5f2e4)}
+body.light-mode .progress-map-book.in-progress .progress-map-book-head small{color:#8a5c00}
+body.light-mode .progress-map-book.completed .progress-map-book-head small{color:#2f6f3d}
+body.light-mode .progress-map-book-bar{background:#e4dac6}
+body.light-mode .progress-map-book-detail{border-top-color:#ded2bb}
+@media(min-width:680px){.progress-map-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+
+/* V3.1.16 · Sincronización manual de libros ya leídos */
+.progress-map-sync-row{display:grid;gap:7px;margin:0 0 14px}
+.progress-map-sync-row small{color:var(--muted);font-size:.72rem;line-height:1.4}
+.progress-map-sync-btn{justify-self:start;padding:9px 13px;border:1px solid rgba(205,155,47,.65);border-radius:12px;background:rgba(181,127,19,.11);color:#efd68e;font-weight:700;cursor:pointer}
+.progress-map-sync-overlay{position:fixed;inset:0;z-index:13050;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.66);backdrop-filter:blur(4px)}
+.progress-map-sync-dialog{position:relative;width:min(94vw,620px);max-height:88vh;display:flex;flex-direction:column;padding:22px;border:1px solid rgba(211,170,66,.72);border-radius:20px;background:#18140e;color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.progress-map-sync-dialog h3{margin:0 36px 8px 0;color:#f0d68d;font-family:"Lora",serif}
+.progress-map-sync-dialog>p{margin:0 0 14px;color:var(--muted);font-size:.86rem;line-height:1.5}
+.progress-map-sync-close{position:absolute;right:10px;top:8px;width:34px;height:34px;border:0;background:transparent;color:#d8cbaa;font-size:1.55rem;cursor:pointer}
+.progress-map-sync-actions-top{display:flex;gap:8px;margin-bottom:10px}
+.progress-map-sync-actions-top button,.progress-map-sync-footer button{padding:9px 12px;border:1px solid rgba(205,155,47,.46);border-radius:11px;background:rgba(255,255,255,.045);color:var(--text);cursor:pointer}
+.progress-map-sync-list{overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:3px 3px 10px}
+.progress-map-sync-item{display:flex;align-items:center;gap:9px;padding:10px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(255,255,255,.025);cursor:pointer}
+.progress-map-sync-item input{width:18px;height:18px;accent-color:#c99b37}
+.progress-map-sync-item span{display:grid;gap:2px;min-width:0}
+.progress-map-sync-item strong{font-size:.83rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress-map-sync-item small{font-size:.68rem;color:var(--muted)}
+.progress-map-sync-item.already-completed{opacity:.62;cursor:default}
+.progress-map-sync-footer{display:flex;justify-content:flex-end;gap:10px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+.progress-map-sync-confirm{border-color:rgba(205,155,47,.8)!important;background:linear-gradient(135deg,#8f6010,#c49531)!important;color:#fff8df!important;font-weight:700}
+body.light-mode .progress-map-sync-btn{border-color:#a9791e;background:#f7ecd0;color:#704b00}
+body.light-mode .progress-map-sync-dialog{background:#fffdf8;color:#30291f;border-color:#b98b29}
+body.light-mode .progress-map-sync-dialog h3{color:#735000}
+body.light-mode .progress-map-sync-dialog>p,body.light-mode .progress-map-sync-item small{color:#655c4f}
+body.light-mode .progress-map-sync-close{color:#4b4134}
+body.light-mode .progress-map-sync-actions-top button,body.light-mode .progress-map-sync-footer button,body.light-mode .progress-map-sync-item{background:#fffaf0;border-color:#c9b06d;color:#30291f}
+@media(max-width:560px){.progress-map-sync-list{grid-template-columns:1fr}.progress-map-sync-footer{flex-direction:column-reverse}.progress-map-sync-footer button{width:100%}}
+
+
+/* V3.1.19 · Lecturas completas de la Biblia */
+.progress-map-full-bible{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px;border:1px solid rgba(196,151,52,.44);border-radius:16px;
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(181,127,19,.10))
+}
+.progress-map-full-bible>div{display:grid;gap:3px}
+.progress-map-full-bible span{color:var(--muted);font-size:.75rem}
+.progress-map-full-bible strong{color:#efd68e;font-family:"Lora",serif;font-size:1rem}
+.progress-map-full-bible button{
+  flex:0 0 auto;padding:9px 12px;border:1px solid rgba(205,155,47,.68);border-radius:11px;
+  background:rgba(181,127,19,.14);color:#fff0bd;font-weight:700;cursor:pointer
+}
+.progress-map-full-bible-field{display:grid;gap:8px;margin:4px 0 12px}
+.progress-map-full-bible-field span{color:var(--muted);font-size:.82rem}
+.progress-map-full-bible-field input{
+  width:100%;padding:12px 14px;border:1px solid rgba(205,155,47,.62);border-radius:12px;
+  background:rgba(255,255,255,.05);color:var(--text);font:inherit;font-size:1.05rem
+}
+.progress-map-full-bible-note{font-size:.76rem!important}
+body.light-mode .progress-map-full-bible{background:#fffaf0;border-color:#c9b06d}
+body.light-mode .progress-map-full-bible span{color:#655c4f}
+body.light-mode .progress-map-full-bible strong{color:#735000}
+body.light-mode .progress-map-full-bible button{background:#f4e4bc;border-color:#a9791e;color:#704b00}
+body.light-mode .progress-map-full-bible-field span{color:#655c4f}
+body.light-mode .progress-map-full-bible-field input{background:#fffdf8;border-color:#b98b29;color:#30291f}
+@media(max-width:520px){
+  .progress-map-full-bible{align-items:stretch;flex-direction:column}
+  .progress-map-full-bible button{width:100%}
+}
+
+
+/* V3.1.21 · Historial manual separado del progreso real */
+.progress-map-book-manual{display:block;margin-top:5px;color:#efd68e;font-size:.72rem;font-weight:700}
+.progress-map-book-manual-detail{margin-top:4px;color:var(--muted)}
+.progress-map-book-manual-detail strong{color:var(--text)}
+.progress-map-book-edit-wrap{display:block;margin-top:7px}
+.progress-map-book-edit-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:auto;min-height:34px;
+  padding:7px 11px;border:1px solid rgba(205,155,47,.64);border-radius:10px;
+  background:linear-gradient(145deg,rgba(181,127,19,.18),rgba(255,255,255,.04));
+  color:#f2d98e;font:inherit;font-size:.7rem;font-weight:700;cursor:pointer
+}
+.progress-map-book-edit-btn:active{transform:translateY(1px)}
+body.light-mode .progress-map-book-manual{color:#795300}
+body.light-mode .progress-map-book-manual-detail{color:#655c4f}
+body.light-mode .progress-map-book-manual-detail strong{color:#30291f}
+body.light-mode .progress-map-book-edit-btn{border-color:#a9791e;background:#f4e4bc;color:#704b00}
+
+
+/* V3.1.23 · Tarjetas compactas e historial personal coherente */
+.progress-map-grid{grid-template-columns:1fr;gap:10px}
+.progress-map-book{padding:0;overflow:hidden;cursor:default}
+.progress-map-book-main{
+  display:block;width:100%;padding:13px;border:0;background:transparent;color:inherit;
+  font:inherit;text-align:left;cursor:pointer
+}
+.progress-map-book-main:active{background:rgba(255,255,255,.025)}
+.progress-map-book-manual{
+  display:block;margin-top:6px;color:#efd286;font-size:.72rem;font-weight:700
+}
+.progress-map-book-detail{
+  margin:0 13px 13px;padding-top:9px
+}
+.progress-map-book-personal-row{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px
+}
+.progress-map-book-personal-row>span{min-width:0}
+.progress-map-book-edit-btn{
+  flex:0 0 auto;min-height:30px;padding:5px 12px;border-radius:999px;font-size:.68rem
+}
+body.light-mode .progress-map-book-main{color:#30291f}
+body.light-mode .progress-map-book-main:active{background:#f7f0df}
+@media(min-width:620px){
+  .progress-map-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* V3.1.26 · Resumen final de historial personal y lectura actual */
+.progress-map-overview{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin:14px 0 16px
+}
+.progress-map-overview-block{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:15px 16px;
+  border:1px solid rgba(205,155,47,.38);
+  border-radius:16px;
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(181,127,19,.07))
+}
+.progress-map-overview-block span{
+  color:var(--muted);
+  font-size:.76rem
+}
+.progress-map-overview-block strong{
+  color:#f0d58b;
+  font-size:.98rem;
+  line-height:1.35
+}
+.progress-map-overview-block small{
+  color:var(--muted);
+  font-size:.76rem
+}
+body.light-mode .progress-map-overview-block{
+  background:linear-gradient(145deg,#fffdf8,#f7ecd4);
+  border-color:#c49a42
+}
+body.light-mode .progress-map-overview-block span,
+body.light-mode .progress-map-overview-block small{
+  color:#655c4f
+}
+body.light-mode .progress-map-overview-block strong{
+  color:#735000
+}
+@media(min-width:620px){
+  .progress-map-overview{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* V3.1.58 · Navegación compacta por los dos testamentos */
+.progress-map-testament-tabs{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;border:1px solid rgba(205,155,47,.48);border-radius:15px;background:rgba(14,17,21,.96);box-shadow:0 7px 18px rgba(0,0,0,.24)}
+.progress-map-testament-tabs button{min-width:0;min-height:42px;padding:8px 6px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--muted);font:inherit;font-size:.75rem;font-weight:700;cursor:pointer}
+.progress-map-testament-tabs button[aria-selected="true"]{border-color:rgba(223,181,77,.72);background:linear-gradient(145deg,#7e5512,#b58124);color:#fff8df}
+.progress-map-testament{display:none;gap:12px}
+.progress-map-testament.is-active{display:grid}
+.progress-map-testament>h3{font-size:1.08rem}
+.progress-map-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.progress-map-book-main{padding:10px 10px 7px;cursor:default}
+.progress-map-book-head{display:grid;gap:3px}
+.progress-map-book-head strong{font-size:.78rem}
+.progress-map-book-head small{font-size:.58rem}
+.progress-map-book-count{margin-top:6px;font-size:.63rem}
+.progress-map-book-manual{margin-top:4px;font-size:.66rem}
+.progress-map-book-bar{height:4px;margin-top:6px}
+.progress-map-book-compact-footer{display:grid;gap:7px;padding:0 10px 10px;color:var(--muted);font-size:.57rem;line-height:1.35}
+.progress-map-book-compact-footer .progress-map-book-edit-btn{justify-self:start;min-height:28px;padding:4px 12px;font-size:.64rem}
+body.light-mode .progress-map-testament-tabs{background:rgba(255,253,248,.97);border-color:#c49a42}
+body.light-mode .progress-map-testament-tabs button{color:#655c4f}
+body.light-mode .progress-map-testament-tabs button[aria-selected="true"]{color:#fff8df}
+body.light-mode .progress-map-book-compact-footer{color:#655c4f}
+@media(min-width:720px){.progress-map-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
