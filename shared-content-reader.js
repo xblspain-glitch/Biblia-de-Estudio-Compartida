@@ -48,6 +48,7 @@
       element.hidden=true;
       element.setAttribute('aria-hidden','true');
       element.tabIndex=-1;
+      element.style.setProperty('display','none','important');
     });
     hide();
     new MutationObserver(hide).observe(document.documentElement,{childList:true,subtree:true});

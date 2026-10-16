@@ -1,5 +1,5 @@
 const DATA='./';
-const APP_VERSION='1.0.2-compartida';
+const APP_VERSION='1.0.3-compartida';
 document.getElementById('appVersionNumber')?.replaceChildren(APP_VERSION);
 const CACHE_PREFIX='biblia-estudio-';
 const DICTIONARY_EQUIVALENCE_CHOICES_KEY='biblia_dictionary_equivalence_choices_v3150';
@@ -1036,10 +1036,10 @@ function updateSelection(){
   explanationArmedKey='';
   if(explainBtn){
     explainBtn.dataset.mode=selectedExplanation?'view':'open';
-    explainBtn.textContent=selectedExplanation?'VER EXPLICACIÓN':'AÑADIR EXPLICACIÓN';
+    explainBtn.textContent=window.__BIBLE_SHARED_READ_ONLY__?'EXPLICACIÓN':(selectedExplanation?'VER EXPLICACIÓN':'AÑADIR EXPLICACIÓN');
     explainBtn.classList.toggle('explanation-attention',Boolean(selectedExplanation));
-    explainBtn.setAttribute('aria-label',selectedExplanation?'Leer explicación':'Añadir explicación');
-    explainBtn.title=selectedExplanation?'Leer explicación':'Añadir explicación';
+    explainBtn.setAttribute('aria-label',window.__BIBLE_SHARED_READ_ONLY__?'Explicación':(selectedExplanation?'Leer explicación':'Añadir explicación'));
+    explainBtn.title=window.__BIBLE_SHARED_READ_ONLY__?(selectedExplanation?'Leer explicación':'Este pasaje todavía no tiene explicación compartida'):(selectedExplanation?'Leer explicación':'Añadir explicación');
   }
   if(removeExplanationBtn){
     removeExplanationBtn.classList.toggle('hidden',!selectedExplanation);
